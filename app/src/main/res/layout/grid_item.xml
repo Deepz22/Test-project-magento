@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:paddingBottom="10dp"
+    android:paddingTop="10dp"
+    android:id="@+id/uiRLMain"
+    >
+
+
+    <RelativeLayout
+        android:id="@+id/uiRL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ProgressBar
+            android:id="@+id/pb"
+            style="@android:style/Widget.ProgressBar.Small"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:visibility="gone"
+            android:background="@android:color/white"
+            android:layout_centerHorizontal="true" />
+
+
+        <ImageView
+            android:id="@+id/uiIV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:visibility="visible"
+            android:src="@drawable/appicon"/>
+
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/uiTVName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NAME"
+        android:gravity="center"
+        android:textColor="@android:color/holo_green_dark"
+        android:layout_below="@+id/uiRL"
+        android:layout_marginTop="10dp"
+        android:layout_alignLeft="@+id/uiRL"
+        android:layout_alignRight="@+id/uiRL"
+        />
+
+    <TextView
+        android:id="@+id/uiTVDob"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="SKU"
+        android:gravity="center"
+        android:layout_below="@+id/uiTVName"
+        android:layout_alignLeft="@+id/uiTVName"
+        android:layout_alignRight="@+id/uiTVName"
+        />
+
+</RelativeLayout>

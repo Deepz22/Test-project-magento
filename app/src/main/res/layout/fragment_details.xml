@@ -1,0 +1,74 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="test.com.testproject.DetailsFragment"
+    android:background="@android:color/holo_green_light">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <RelativeLayout
+        android:id="@+id/uiRL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <ProgressBar
+            android:id="@+id/uiPb"
+            style="@android:style/Widget.ProgressBar.Small"
+            android:layout_width="260dp"
+            android:layout_height="260dp"
+            android:visibility="visible"
+            android:background="@android:color/white"
+            android:layout_centerHorizontal="true" />
+
+
+        <ImageView
+            android:id="@+id/uiIVPic"
+            android:layout_width="260dp"
+            android:layout_height="260dp"
+            android:layout_centerHorizontal="true"
+            android:visibility="gone"
+            android:src="@android:drawable/ic_dialog_email"/>
+
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/uiTVDes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/uiRL"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:textSize="40sp"
+        android:layout_alignLeft="@+id/uiRL"
+        android:layout_alignRight="@+id/uiRL"
+        android:text="ABOUT PRODUCT"/>
+
+    <!--<RelativeLayout
+        android:id="@+id/uiRLBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/holo_purple">
+
+        <Button
+            android:id="@+id/uiBtnADD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="ADD TO CART"/>
+
+        <Button
+            android:id="@+id/uiBtnRM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="REMOVE FROM CART"/>
+
+    </RelativeLayout>-->
+
+
+</RelativeLayout>

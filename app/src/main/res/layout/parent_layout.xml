@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="5">
+
+
+
+    <RelativeLayout
+        android:id="@+id/uiRLTopBar"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:background="@android:color/white"
+        android:layout_height="0dp">
+
+        <TextView
+            android:id="@+id/uiTVTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="20sp"
+            android:text="SHOPPING CART"/>
+
+        <RelativeLayout
+            android:id="@+id/uiRLCart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@+id/uiTVTitle"
+            android:layout_marginRight="5dp">
+
+            <RelativeLayout
+                android:id="@+id/uiRLRedbub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/circle"
+                android:layout_marginTop="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp"
+                android:visibility="invisible"
+                >
+                <TextView
+                    android:id="@+id/uiTVNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10"
+                    android:textSize="20sp"
+                    android:layout_centerInParent="true"
+                    android:textColor="@android:color/black"/>
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/uiIVCart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/uiRLRedbub"
+                android:src="@drawable/cart4"
+                />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+    <FrameLayout
+        android:id="@+id/uiFL"
+        android:layout_weight="3.5"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@+id/uiRLTopBar"
+        android:layout_marginTop="10dp"
+        ></FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/uiRLBottom"
+        android:layout_weight="0.5"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone"
+        >
+
+        <Button
+            android:id="@+id/uiBtnADD"
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:gravity="center"
+            android:text="ADD TO CART"/>
+
+        <Button
+            android:id="@+id/uiBtnRM"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:text="REMOVE FROM CART"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
