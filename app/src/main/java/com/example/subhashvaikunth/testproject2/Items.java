@@ -13,7 +13,7 @@ public class Items extends Custom_attributes implements Serializable {
     private Custom_attributes[] custom_attributes;
 
     private String sku;
-    private String image;
+    private String imageUrl;
 
     private String attribute_set_id;
 
@@ -74,12 +74,12 @@ public class Items extends Custom_attributes implements Serializable {
     {
         this.sku = sku;
     }
-    public  String getImage(){
-        return image;
+    public  String getImageUrl(){
+        return imageUrl;
     }
-    public void setImage(String image)
+    public void setImageUrl(String imageUrl)
     {
-        this.image = image;
+        this.imageUrl = imageUrl;
     }
 
     public String getAttribute_set_id ()

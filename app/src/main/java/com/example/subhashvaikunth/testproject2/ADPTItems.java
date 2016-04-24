@@ -13,15 +13,15 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import java.io.File;
-import java.io.FileInputStream;
+import java.io.InputStream;
+import java.net.URL;
 import java.util.List;
 
 /**
  * Created by srinivas1 on 2/3/2016.
  */
 public class ADPTItems extends BaseAdapter {
-
+    private static final String URL1 = "http://192.168.1.6/magento94/pub/media/catalog/product/";
     private List<MODELItem> itemList;
 
     private Context         context;
@@ -78,13 +78,14 @@ public class ADPTItems extends BaseAdapter {
 
         }
 
+        final MODELItem item1 = (MODELItem) getItem(position);
         final MODELItem item = (MODELItem) getItem(position);
         ImgViewAndPath imgViewAndPath = new ImgViewAndPath();
 
         imgViewAndPath.setImageView(holder.uiIV);
         imgViewAndPath.setPb(holder.pb);
 
-        imgViewAndPath.setPath(item.getValue());
+        imgViewAndPath.setPath(item1.getValue());
 
         new BitmapTask().execute(imgViewAndPath);
         holder.uiTVName.setText(item.getName());
@@ -96,7 +97,7 @@ public class ADPTItems extends BaseAdapter {
             public void onClick(View v) {
 
                 if (itemSelectedCallBack != null) {
-                    itemSelectedCallBack.onSelected(item);
+                    itemSelectedCallBack.onSelected(item1);
                 }
             }
         });
@@ -131,19 +132,20 @@ public class ADPTItems extends BaseAdapter {
         }
 
 
-        private Bitmap getBitmapDownloaded(String value) {
+        private Bitmap getBitmapDownloaded(String url1) {
             Bitmap bitmap = null;
+//           url1 = "http://192.168.1.6/magento94/pub/media/catalog/product";
+//            String url2= url1+ "value";
             try {
 
-                bitmap = BitmapFactory.decodeStream((new FileInputStream(new File(value))));
+
+
+//                bitmap = BitmapFactory.decodeStream((new FileInputStream(new File(url1))));
 //                bitmap = getResizedBitmap(bitmap, 50, 50);
-//                bitmap = BitmapFactory.decodeStream((InputStream) new URL(url)
-//                        .getContent());
+                bitmap = BitmapFactory.decodeStream((InputStream) new URL("http://192.168.1.6/magento94/pub/media/catalog/product/m/b/mb01-blue-0.jpg")
+                        .getContent());
                 return bitmap;
-//            } catch (MalformedURLException e) {
-//                e.printStackTrace();
-            }
-            catch (Exception e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
             return bitmap;

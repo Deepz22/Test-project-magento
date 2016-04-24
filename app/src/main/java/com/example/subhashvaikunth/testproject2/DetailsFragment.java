@@ -13,11 +13,8 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import java.io.File;
-import java.io.FileInputStream;
-
-
-
+import java.io.InputStream;
+import java.net.URL;
 
 
 public class DetailsFragment extends Fragment implements View.OnClickListener{
@@ -29,6 +26,8 @@ public class DetailsFragment extends Fragment implements View.OnClickListener{
     private ProgressBar pb;
 
     private MODELItem item;
+    private MODELItem item1;
+
 
 
 
@@ -50,6 +49,7 @@ public class DetailsFragment extends Fragment implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         Bundle bundle = this.getArguments();
         item = (MODELItem) bundle.getSerializable("ITEM");
+        item1 = (MODELItem) bundle.getSerializable("ITEM1");
 //        item1=(Media_gallery_entries) bundle.getSerializable("ITEM1");
     }
 
@@ -85,7 +85,7 @@ public class DetailsFragment extends Fragment implements View.OnClickListener{
 //        remove.setOnClickListener(this);
 
         if (item != null) {
-            String path = item.getValue();
+            String path = item1.getValue();
             String name = item.getName();
             des.setText(name);
             ImgViewAndPath viewAndPath = new ImgViewAndPath();
@@ -131,12 +131,13 @@ public class DetailsFragment extends Fragment implements View.OnClickListener{
             return getBitmapDownloaded(path);
         }
 
-        private Bitmap getBitmapDownloaded(String value) {
+        private Bitmap getBitmapDownloaded(String url2) {
             Bitmap bitmap = null;
+
             try {
-                bitmap = BitmapFactory.decodeStream((new FileInputStream(new File(value))));
-//                bitmap = BitmapFactory.decodeStream((InputStream) new URL(url)
-//                        .getContent());
+//                bitmap = BitmapFactory.decodeStream((new FileInputStream(new File(value))));
+                bitmap = BitmapFactory.decodeStream((InputStream) new URL(url2)
+                        .getContent());
                 return bitmap;
             } catch (Exception e) {
                 e.printStackTrace();

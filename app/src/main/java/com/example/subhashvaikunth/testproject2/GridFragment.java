@@ -25,7 +25,7 @@ import java.util.List;
 
 public class GridFragment extends Fragment implements ADPTItems.OnItemSelected{
 
-    private static final String URL = "http://192.168.1.6/server/rest/V1/products/?searchCriteria[page_size]=100";
+    private static final String URL = "http://192.168.1.6/magento94/rest/V1/products/?searchCriteria[page_size]=100";
 
     GridView gridView;
     ADPTItems adptItems;
@@ -113,6 +113,7 @@ public class GridFragment extends Fragment implements ADPTItems.OnItemSelected{
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
         List<MODELItem> itemList = new ArrayList<>();
+
 //            List<Media_gallery_entries> itemList1 = new ArrayList<>();
 //            Map<String,List<Map<String,String>>> itemList = new HashMap<String,List<Map<String,String>>>();
 
@@ -142,8 +143,11 @@ public class GridFragment extends Fragment implements ADPTItems.OnItemSelected{
                         JSONObject object = (JSONObject)jsonArray1.get(j);
                         item1.setAttribute_code(object.getString("attribute_code"));
                         item1.setValue(object.getString("value"));
+//                        item1.setImageUrl(object.getString("image"));
+//                        item1.setValue(object.getString("value"));
 
 
+                          itemList.add(item1);
 
 
 
@@ -177,7 +181,7 @@ public class GridFragment extends Fragment implements ADPTItems.OnItemSelected{
 //        } catch (JSONException e1) {
 //                e1.printStackTrace();
 //            }
-            adptItems = new ADPTItems(getActivity(), itemList, GridFragment.this);
+            adptItems = new ADPTItems(getActivity(), itemList,GridFragment.this);
 //            adptItems = new ADPTItems(getActivity(), itemlist1, GridFragment.this);
                 gridView.setAdapter(adptItems);
                 adptItems.notifyDataSetChanged();
